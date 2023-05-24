@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import TodoForm from "./firebasetest/TodoForm";
 import TodoList from "./firebasetest/TodoList";
 
