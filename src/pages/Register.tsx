@@ -6,7 +6,7 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../authentication/AuthFunctions";
-import "./Register.css";
+import "./styles/Register.css";
 
 function Register() {
   const [email, setEmail] = useState("");
