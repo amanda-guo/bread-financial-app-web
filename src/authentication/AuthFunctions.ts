@@ -46,7 +46,7 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
   }
 };
 
-const registerWithEmailAndPassword = async (
+const signUpWithEmailAndPassword = async (
   name: string,
   email: string,
   password: string
@@ -83,7 +83,7 @@ const logout = () => {
 export {
   signInWithGoogle,
   logInWithEmailAndPassword,
-  registerWithEmailAndPassword,
+  signUpWithEmailAndPassword,
   sendPasswordReset,
   logout,
 };
