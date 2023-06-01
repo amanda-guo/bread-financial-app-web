@@ -5,6 +5,7 @@ import "./styles/Home.css";
 import { auth, db } from "../firebase";
 import { logout } from "../authentication/AuthFunctions";
 import { query, collection, getDocs, where, onSnapshot } from "firebase/firestore";
+import AddCategory from "./AddCategory";
 
 function Home() {
   const [user, loading, error] = useAuthState(auth);
@@ -53,6 +54,7 @@ function Home() {
           Logout
         </button>
       </div>
+      <AddCategory />
     </div>
   );
 }
