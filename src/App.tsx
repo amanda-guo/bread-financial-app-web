@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import ResetPassword from "./pages/ResetPassword";
 import AddCategory from "./pages/AddCategory";
+import AddExpense from "./pages/AddExpense";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
           <Route path="/addcategory" element={<AddCategory />} />
+          <Route path="/addexpense" element={<AddExpense />} />
         </Routes>
       </Router>
     </div>
