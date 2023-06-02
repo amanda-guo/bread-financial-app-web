@@ -5,7 +5,6 @@ import "./styles/Home.css";
 import { auth, db } from "../firebase";
 import { logout } from "../authentication/AuthFunctions";
 import { query, collection, getDocs, where, onSnapshot } from "firebase/firestore";
-import AddCategory from "./AddCategory";
 
 function Home() {
   const [user, loading, error] = useAuthState(auth);
@@ -44,6 +43,10 @@ function Home() {
     // fetchUserName();
   }, [user, loading]);
 
+  const routeChange = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div className="home">
       <div className="home__container">
@@ -54,7 +57,7 @@ function Home() {
           Logout
         </button>
       </div>
-      <AddCategory />
+      <button onClick={() => routeChange(`/addcategory`)}>Add Category</button>
     </div>
   );
 }

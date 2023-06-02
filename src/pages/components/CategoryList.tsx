@@ -10,7 +10,7 @@ function CategoryList() {
   // Read
 
   useEffect(() => {
-    const q = query(collection(db, "category"));
+    const q = query(collection(db, "categories"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let categoriesArr: any[] = [];
       querySnapshot.forEach((doc) => {
