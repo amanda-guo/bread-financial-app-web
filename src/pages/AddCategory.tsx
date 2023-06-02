@@ -10,7 +10,8 @@ function AddCategory() {
 
   // Create a category
 
-  // TODO: refactor this to be more succinct (ref: https://claritydev.net/blog/typescript-typing-form-events-in-react)
+  // TODO: refactor this to be more succinct (ref: https://claritydev.net/blog/typescript-typing-form-events-in-react and https://react.dev/reference/react/useState)
+  // TODO: add the ability to add expenses to this
 
   const createCategory = async (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
@@ -58,15 +59,15 @@ function AddCategory() {
           <option value="yellow">Yellow</option>
         </select>
       </label>
-      {/* TODO: fix this!! */}
-      {/* <TextField
+      <TextField
         style={{ width: "100%" }}
+        type="number"
         id="outlined-basic"
         value={spendingLimit}
-        onChange={(e) => setSpendingLimit(e.target.value)}
+        onChange={(e) => setSpendingLimit(Number(e.target.value))}
         label="Spending Limit"
         variant="outlined"
-      /> */}
+      />
       <button onClick={createCategory}>Create Category</button>
     </form>
   );
