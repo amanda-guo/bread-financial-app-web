@@ -58,6 +58,7 @@ function Home() {
         </button>
       </div>
       <button onClick={() => routeChange(`/addcategory`)}>Add Category</button>
+      <button onClick={() => routeChange(`/addexpense`)}>Add Expense</button>
     </div>
   );
 }

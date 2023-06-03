@@ -5,7 +5,8 @@ import TextField from "@mui/material/TextField";
 import { auth, db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Divider, Stack } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function AddExpense() {
   const [user, loading, error] = useAuthState(auth);
@@ -98,10 +99,10 @@ function AddExpense() {
             label="Cost"
             variant="outlined"
           />
-          {/* TODO: fix this!! */}
-          {/* <DatePicker
-            onChange={() => setDate(date)}
-          /> */}
+          <DatePicker
+            selected={date}
+            onChange={(date: Date) => setDate(date!)}
+          />
           <button onClick={addExpense}>Add Expense</button>
         </form>
       </Stack>
