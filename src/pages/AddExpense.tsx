@@ -7,6 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { Divider, Stack } from "@mui/material";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ExpenseList from "./components/ExpenseList";
 
 function AddExpense() {
   const [user, loading, error] = useAuthState(auth);
@@ -105,6 +106,7 @@ function AddExpense() {
           />
           <button onClick={addExpense}>Add Expense</button>
         </form>
+        <ExpenseList />
       </Stack>
     </>
   );
