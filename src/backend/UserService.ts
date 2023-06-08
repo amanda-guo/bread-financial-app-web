@@ -27,7 +27,11 @@ const fetchUsers = async () => {
 const fetchOneUser = async (userId: string) => {
   const userRef = doc(db, "users", userId);
   const userSnap = await getDoc(userRef);
-  console.log("User data:", userSnap.data());
+  if (userSnap.exists()) {
+    console.log("User data:", userSnap.data());
+  } else {
+    console.log("User data doesn't exist.");
+  }
 };
 
 // Update
