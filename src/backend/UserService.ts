@@ -8,7 +8,6 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { db, auth } from "../firebase";
-import { ProviderId } from "firebase/auth";
 
 // Read all users
 
