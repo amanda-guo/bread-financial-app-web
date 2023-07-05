@@ -68,9 +68,7 @@ function Home() {
       <button onClick={() => routeChange(`/addcategory`)}>Add Category</button>
       <button onClick={() => routeChange(`/addexpense`)}>Add Expense</button>
       <button onClick={fetchUsers}>All Users Info</button>
-      <button onClick={() => fetchOneUser("zHuVfrWhJMPErPwe56qK")}>
-        Current User Info
-      </button>
+      <button onClick={fetchOneUser}>Current User Info</button>
     </div>
   );
 }

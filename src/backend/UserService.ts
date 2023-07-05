@@ -8,6 +8,7 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { db, auth } from "../firebase";
+import { ProviderId } from "firebase/auth";
 
 // Read all users
 
@@ -24,13 +25,25 @@ const fetchUsers = async () => {
 
 // Read one user
 
-const fetchOneUser = async (userId: string) => {
-  const userRef = doc(db, "users", userId);
-  const userSnap = await getDoc(userRef);
-  if (userSnap.exists()) {
-    console.log("User data:", userSnap.data());
-  } else {
-    console.log("User data doesn't exist.");
+// const fetchOneUser = async (userId: string) => {
+//   const userRef = doc(db, "users", userId);
+//   const userSnap = await getDoc(userRef);
+//   if (userSnap.exists()) {
+//     console.log("User data:", userSnap.data());
+//   } else {
+//     console.log("User data doesn't exist.");
+//   }
+// };
+
+const fetchOneUser = async () => {
+  const user = auth.currentUser;
+  if (user !== null) {
+    const name = user.displayName; // why is this null or is there a way to get the firebase ID and pass it over here?
+    const email = user.email;
+    console.log(
+      `name: ${name}, 
+      email: ${email}`
+    );
   }
 };
 
