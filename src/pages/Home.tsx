@@ -6,6 +6,7 @@ import { auth, db } from "../firebase";
 import { logout } from "../authentication/AuthFunctions";
 import { query, collection, getDocs, where, onSnapshot } from "firebase/firestore";
 import { fetchOneUser, fetchUsers } from "../backend/UserService";
+import Button from "./components/Button";
 
 function Home() {
   const [user, loading, error] = useAuthState(auth);
@@ -69,6 +70,10 @@ function Home() {
       <button onClick={() => routeChange(`/addexpense`)}>Add Expense</button>
       <button onClick={fetchUsers}>All Users Info</button>
       <button onClick={fetchOneUser}>Current User Info</button>
+      <Button
+        onClick={() => console.log("Click!")}
+        children="Main Button"
+      />
     </div>
   );
 }
